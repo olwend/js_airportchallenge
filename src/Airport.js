@@ -1,6 +1,7 @@
 'use strict';
 
-function Airport(){
+function Airport(weather){
+  this._weather = typeof weather !== 'undefined' ? weather : new Weather();
   this._hangar = [];
 }
 
@@ -20,8 +21,4 @@ if(this.isStormy()) {
   throw new Error('cannot take off during storm');
 }
   this._hangar = [];
-};
-
-Airport.prototype.isStormy = function(){
-  return false;
 };
